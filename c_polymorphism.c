@@ -2,7 +2,7 @@
 
 typedef struct Data {
     int val;
-    void (*action)(struct Data *self);
+    void (*action)(struct Data *);
 } Data;
 
 typedef void (*func_action)(Data *);
@@ -19,7 +19,7 @@ void increment_value(Data *self) {
     self->val++;
 }
 
-void apply_action(Data *self, void (*action)(Data *self)) {
+void apply_action(Data *self, func_action action) {
     self->action = action;
     self->action(self);
 }
