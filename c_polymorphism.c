@@ -12,7 +12,7 @@ void print(Data *self) {
 }
 
 void double_value(Data *self) {
-    self->val *= 2;
+    self->val <<= 1;
 }
 
 void increment_value(Data *self) {
